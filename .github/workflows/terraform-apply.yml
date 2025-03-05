@@ -8,7 +8,7 @@ on:
 jobs:
   apply:
     name: Terraform Apply
-    runs-on: ubuntu
+    runs-on: mock-project
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3

@@ -6,7 +6,7 @@ on:
 jobs:
   destroy:
     name: Terraform Destroy
-    runs-on: ubuntu
+    runs-on: mock-project
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
