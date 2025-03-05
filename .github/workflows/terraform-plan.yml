@@ -16,8 +16,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install Unzip
-        run: sudo apt-get update && sudo apt-get install -y unzip
+      - name: Install Dependencies (Unzip & Node.js)
+        run: |
+          sudo apt-get update && sudo apt-get install -y unzip
+          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+          sudo apt-get install -y nodejs
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
