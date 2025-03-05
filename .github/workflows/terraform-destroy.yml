@@ -30,7 +30,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-       - name: Terraform Destroy
+      - name: Terraform Destroy
         run: terraform destroy -auto-approve | tee terraform-destroy.log
 
       - name: Upload Terraform Destroy Output
