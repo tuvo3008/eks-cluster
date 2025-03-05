@@ -33,4 +33,10 @@ jobs:
         run: terraform init
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve | tee terraform-apply.log
+
+      - name: Upload Terraform Apply Output
+        uses: actions/upload-artifact@v3
+        with:
+          name: terraform-apply-output
+          path: terraform-apply.log
