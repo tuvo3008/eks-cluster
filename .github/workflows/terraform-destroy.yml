@@ -34,7 +34,7 @@ jobs:
         run: terraform destroy -auto-approve | tee terraform-destroy.log
 
       - name: Upload Terraform Destroy Output
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: terraform-destroy-output
           path: terraform-destroy.log
