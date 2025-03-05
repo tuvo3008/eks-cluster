@@ -1,16 +1,13 @@
-name: Terraform Plan
+name: Terraform Apply
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - opened
-      - synchronize
 
 jobs:
-  plan:
-    name: Terraform Plan
+  apply:
+    name: Terraform Apply
     runs-on: ubuntu
     steps:
       - name: Checkout Repository
@@ -29,5 +26,5 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Plan
-        run: terraform plan
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
